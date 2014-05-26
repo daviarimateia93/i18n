@@ -1,4 +1,6 @@
-﻿var i18n = {
+﻿//Created by Davi de Sousa Arimateia, daviarimateia93@gmail.com
+
+var i18n = {
 
 	__language: null,
 	__data: null,

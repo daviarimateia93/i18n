@@ -1,0 +1,22 @@
+<h2 align="center">display jshtml literal's "<i>\#\#\@</i>" using "<i>\\</i>" to scape</h2>
+<h2 align="center">accessing data passed by parameter through local "<i>jshtml.data = '##@ jshtml.data ##';</i>" variable</h2>
+<h2 align="center">"<i>\#\#\@ expression \#\#</i>" resolve the expression and output it</h2>
+<h2 align="center">"<i>\#\# js code, expression \#\#</i>" does not output it</h2>
+
+<table border="1" width="70%" style="margin: 0 auto;">
+	
+	## for(var i = 0, len = data.persons.length; i < len; i++) { ##
+		
+		<tr style="background: ##@ (i % 2 === 0 ? '#f3f3f3' : '#ccc') ##">
+
+			## for(var index in data.persons[i]) { ##
+
+				<td>##@  data.persons[i][index] ##</td>
+
+			## } ##
+
+		</tr>
+
+	## } ##
+
+</table>

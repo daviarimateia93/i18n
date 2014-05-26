@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-title" content="i18n" />
+		<meta name="description" content="i18n" />
+		<meta name="author" content="Davi de Sousa Arimateia" />
+		<meta name="format-detection" content="telephone=yes" />
+		
+		<title>i18n</title>
+	</head>
+
+	<body>
+
+		<h1><span class="i18n" i18n-key="HELLO"></span>, <span id="im-from"></span></h1>
+
+		<h4>
+			
+			<br >First of all, you need to setup i18n at least with { baseDir: 'dir' } parameter
+			<br >the defaults is: { language: 'en', defaultLanguage: 'en', auto: false }
+			<br >
+			<br >There are 2 kind of files:
+			<br >1) resource.LANGUAGE.i18n
+			<br >2) preferences.i18n (this is global preferences, like the name suggest, this translation file has preference over normal resource file)
+			<br >
+			<br >You can use i18n directly on html elements setting i18n as class, and i18n-key="KEY_NAME" attribute, then on document load i18n.applyOnDocument();
+			<br />You can also use i18n.get('KEY_NAME') on javascript, returning a string or null value
+			<br>
+			<br/>Yes, I was too lazy to translate this text to pt-BR
+			<br /><small>Desculpe caros colegas do Brasil =\</small>
+			<br />
+			<br/>See this page source for more details
+		</h4>
+
+	</body>
+	
+	<!-- JQuery JS -->
+	<script src="jquery.js"></script>
+
+	<!-- Utils JS -->
+	<script src="utils.js"></script>
+
+	<!-- i18n JS -->
+	<script src="i18n.js"></script>
+
+
+	<script>
+
+		$(document).ready(function()
+		{
+			//setup i18n
+			i18n.init(
+			{
+				  //auto: true //or you can force the language uncommenting the next line and commenting this line
+				  language: 'pt-BR'
+				, baseDir: '/i18n/'
+			});
+
+			$('#im-from').html( i18n.get('IM_FROM') + ' BRAZIL');
+
+			i18n.applyOnDocument(); //call this when you need to reflect/refresh i18n on doom
+
+		});
+
+	</script>
+
+</html>
