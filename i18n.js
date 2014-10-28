@@ -175,7 +175,19 @@ var i18n = {
 	    {
 		if(render !== undefined)
 		{
-		    $(this).attr(render, text);
+		    if(render.indexOf('|') > -1)
+		    {
+			var targets = render.split('|');
+			
+			for(var i = 0, len = targets.length; i < len; i++)
+			{
+			    $(this).attr(targets[i], text);
+			}
+		    }
+		    else
+		    {
+			$(this).attr(render, text);
+		    }
 		}
 		else
 		{
